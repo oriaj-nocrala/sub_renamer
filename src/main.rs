@@ -11,7 +11,7 @@ use walkdir::WalkDir;
 /// Renombra subtítulos para que coincidan con los nombres de sus archivos de video correspondientes.
 #[derive(Parser, Debug)]
 #[command(
-    author = "Tu Nombre",
+    author = "Jairo Alarcón <jairo.alarconr@gmail.com>",
     version = "1.0.0", 
     about = "Herramienta para renombrar subtítulos basándose en archivos de video",
     long_about = "Esta herramienta busca archivos de subtítulos y videos, extrae identificadores usando regex y renombra los subtítulos para que coincidan con sus videos correspondientes."
@@ -354,13 +354,13 @@ fn main() -> Result<()> {
         eprintln!("❌ Debes proporcionar al menos un regex.");
         eprintln!("\n📚 Ejemplos de uso:");
         eprintln!("  # Básico con regex para ambos tipos de archivo:");
-        eprintln!("  cargo run -- --srt-regex 'S(\\d{{2}})E(\\d{{2}})' --mkv-regex 'S(\\d{{2}})E(\\d{{2}})'");
+        eprintln!("  sub-renamer --srt-regex 'S(\\d{{2}})E(\\d{{2}})' --mkv-regex 'S(\\d{{2}})E(\\d{{2}})'");
         eprintln!("\n  # Con extensiones múltiples y modo recursivo:");
-        eprintln!("  cargo run -- --srt-regex 'S(\\d{{2}})E(\\d{{2}})' --srt-ext srt,ass,vtt --video-ext mkv,mp4,avi --recursive");
+        eprintln!("  sub-renamer --srt-regex 'S(\\d{{2}})E(\\d{{2}})' --srt-ext srt,ass,vtt --video-ext mkv,mp4,avi --recursive");
         eprintln!("\n  # Modo de prueba (no renombra realmente):");
-        eprintln!("  cargo run -- --srt-regex 'S(\\d{{2}})E(\\d{{2}})' --dry-run");
+        eprintln!("  sub-renamer --srt-regex 'S(\\d{{2}})E(\\d{{2}})' --dry-run");
         eprintln!("\n  # En directorio específico:");
-        eprintln!("  cargo run -- --srt-regex 'S(\\d{{2}})E(\\d{{2}})' --directory /path/to/episodes");
+        eprintln!("  sub-renamer --srt-regex 'S(\\d{{2}})E(\\d{{2}})' --directory /path/to/episodes");
         
         std::process::exit(1);
     }
