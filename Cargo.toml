@@ -7,9 +7,9 @@ description = "Herramienta para renombrar subtítulos basándose en archivos de 
 license = "MIT"
 
 [dependencies]
-anyhow = {version = "1.0.98", default-features = false, features = ["std"]}
-clap = {version = "4.5.40", default-features = false, features = ["derive", "std"]}
-regex = {version = "1.11.1", default-features = false, features = ["std"]}
+anyhow = {version = "1.0.98"}
+clap = {version = "4.5.40", features = ["derive"]}
+regex = {version = "1.11.1"}
 walkdir = "2.5.0"
 
 [dev-dependencies]
