@@ -1,0 +1,30 @@
+[package]
+name = "sub_renamer"
+version = "1.0.0"
+edition = "2024"
+authors = ["Jairo Alarcon <jairo.alarconr@gmail.com>"]
+description = "Herramienta para renombrar subtítulos basándose en archivos de video"
+license = "MIT"
+
+[dependencies]
+anyhow = "1.0.98"
+clap = {version = "4.5.40", features = ["derive"]}
+regex = "1.11.1"
+walkdir = "2.5.0"
+
+[dev-dependencies]
+tempfile = "3.20.0"
+
+[profile.release]
+# Optimización máxima para tamaño
+opt-level = "z"          # Optimizar para tamaño, no velocidad
+lto = true               # Link Time Optimization
+codegen-units = 1        # Unidad de codegen única para mejor optimización
+panic = "abort"          # Abortar en panic (elimina código de unwinding)
+strip = true             # Eliminar símbolos de debug
+
+[profile.dev]
+# Optimización para desarrollo más rápido
+opt-level = 0
+debug = true
+strip = false
